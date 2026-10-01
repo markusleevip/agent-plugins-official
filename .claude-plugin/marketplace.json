@@ -4404,15 +4404,17 @@
       },
       "category": "productivity",
       "source": {
-        "source": "url",
+        "source": "git-subdir",
         "url": "https://github.com/anthropics/skills.git",
-        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+        "path": "skills/docx"
       },
       "strict": false,
       "skills": [
-        "./skills/docx"
+        "./"
       ],
-      "homepage": "https://github.com/anthropics/skills/tree/main/skills/docx"
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "version": "1.0.1"
     },
     {
       "name": "pdf",
@@ -4423,15 +4425,17 @@
       },
       "category": "productivity",
       "source": {
-        "source": "url",
+        "source": "git-subdir",
         "url": "https://github.com/anthropics/skills.git",
-        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+        "path": "skills/pdf"
       },
       "strict": false,
       "skills": [
-        "./skills/pdf"
+        "./"
       ],
-      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pdf"
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "version": "1.0.1"
     },
     {
       "name": "presentations",
@@ -4442,15 +4446,17 @@
       },
       "category": "productivity",
       "source": {
-        "source": "url",
+        "source": "git-subdir",
         "url": "https://github.com/anthropics/skills.git",
-        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+        "path": "skills/pptx"
       },
       "strict": false,
       "skills": [
-        "./skills/pptx"
+        "./"
       ],
-      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pptx"
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+      "version": "1.0.1"
     },
     {
       "name": "spreadsheets",
@@ -4461,15 +4467,17 @@
       },
       "category": "productivity",
       "source": {
-        "source": "url",
+        "source": "git-subdir",
         "url": "https://github.com/anthropics/skills.git",
-        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+        "path": "skills/xlsx"
       },
       "strict": false,
       "skills": [
-        "./skills/xlsx"
+        "./"
       ],
-      "homepage": "https://github.com/anthropics/skills/tree/main/skills/xlsx"
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "version": "1.0.1"
     },
     {
       "name": "plugin-creator",
