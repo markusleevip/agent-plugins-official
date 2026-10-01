@@ -1,10 +1,10 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-plugins-official",
-  "description": "Directory of popular Claude Code extensions including development tools, productivity plugins, and MCP integrations",
+  "name": "fcode-plugins-official",
+  "description": "FCode official plugin directory: community plugins and office skills",
   "owner": {
-    "name": "Anthropic",
-    "email": "support@anthropic.com"
+    "name": "FCode",
+    "url": "https://github.com/markusleevip/agent-plugins-official"
   },
   "renames": {
     "adlc": "agentforce-adlc",
@@ -632,22 +632,6 @@
         "sha": "e825f02fbcd7a89087fd1053a57ddcd45113370f"
       },
       "homepage": "https://docs.brightdata.com"
-    },
-    {
-      "name": "browser-use",
-      "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
-      "author": {
-        "name": "Browser Use"
-      },
-      "category": "automation",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/browser-use/plugins.git",
-        "path": "browser-use",
-        "ref": "main",
-        "sha": "4749bcbfe456e5384b98281a8a66119352197f59"
-      },
-      "homepage": "https://browser-use.com"
     },
     {
       "name": "buildkite",
@@ -3632,17 +3616,6 @@
       "homepage": "https://shopify.dev"
     },
     {
-      "name": "skill-creator",
-      "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/skill-creator",
-      "category": "development",
-      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator"
-    },
-    {
       "name": "slack",
       "description": "Slack workspace integration. Search messages, access channels, read threads, and stay connected with your team's communications while coding. Find relevant discussions and context quickly.",
       "category": "productivity",
@@ -4421,6 +4394,99 @@
         "sha": "10573bac239b7062a476667eaa574d400335c70e"
       },
       "homepage": "https://github.com/amzn/selling-partner-agentic-toolkit"
+    },
+    {
+      "name": "documents",
+      "displayName": "Word 文档",
+      "description": "创建、编辑和检查 Word 文档",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/anthropics/skills.git",
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+      },
+      "strict": false,
+      "skills": [
+        "./skills/docx"
+      ],
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/docx"
+    },
+    {
+      "name": "pdf",
+      "displayName": "PDF 文档",
+      "description": "读取、创建和处理 PDF 文档",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/anthropics/skills.git",
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+      },
+      "strict": false,
+      "skills": [
+        "./skills/pdf"
+      ],
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pdf"
+    },
+    {
+      "name": "presentations",
+      "displayName": "PowerPoint 演示文稿",
+      "description": "创建、编辑和检查 PowerPoint 演示文稿",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/anthropics/skills.git",
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+      },
+      "strict": false,
+      "skills": [
+        "./skills/pptx"
+      ],
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/pptx"
+    },
+    {
+      "name": "spreadsheets",
+      "displayName": "Excel 电子表格",
+      "description": "创建、编辑和分析 Excel 电子表格",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/anthropics/skills.git",
+        "sha": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4"
+      },
+      "strict": false,
+      "skills": [
+        "./skills/xlsx"
+      ],
+      "homepage": "https://github.com/anthropics/skills/tree/main/skills/xlsx"
+    },
+    {
+      "name": "plugin-creator",
+      "displayName": "插件创建器",
+      "description": "创建、校验并导入 FCode 自定义技能插件。",
+      "author": {
+        "name": "FCode"
+      },
+      "category": "development",
+      "source": "./plugins/fcode-plugin-creator",
+      "version": "1.0.0"
     }
+  ],
+  "featured": [
+    "documents",
+    "pdf",
+    "presentations",
+    "spreadsheets"
   ]
 }

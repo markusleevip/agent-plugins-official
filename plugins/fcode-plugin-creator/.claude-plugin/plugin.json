@@ -1,0 +1,8 @@
+{
+  "name": "plugin-creator",
+  "version": "1.0.0",
+  "description": "Create FCode custom skill plugins",
+  "skills": [
+    "./skills/plugin-creator"
+  ]
+}

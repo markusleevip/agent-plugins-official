@@ -1,97 +1,27 @@
-# Claude Code Plugins Directory
+# FCode Official Plugins
 
-A curated directory of high-quality plugins for Claude Code.
+This repository is the official remote plugin directory for FCode, maintained by markusleevip. It is based on the [Anthropic Claude Code plugin directory](https://github.com/anthropics/claude-plugins-official). FCode maintains its own catalog identity and compatibility choices; individual plugins retain their original authorship.
 
-> **⚠️ Important:** Make sure you trust a plugin before installing, updating, or using it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they will work as intended or that they won't change. See each plugin's homepage for more information.
+## Use in FCode
 
-## Structure
+Open Plugin Marketplace in FCode to browse this directory, view plugin components, and install plugins. The canonical marketplace identity is `fcode-plugins-official`. Custom plugin sources and plugin creation remain available in FCode.
 
-- **`/plugins`** - Internal plugins developed and maintained by Anthropic
-- **`/external_plugins`** - Third-party plugins from partners and the community
+The catalog is located at `.claude-plugin/marketplace.json`. Relative plugin sources are distributed in this repository; external sources are downloaded from their listed repositories at pinned commits. A catalog listing does not guarantee compatibility with every FCode runtime feature.
 
-## Installation
+## Office plugins
 
-Plugins can be installed directly from this marketplace via Claude Code's plugin system.
+The featured `documents`, `pdf`, `presentations`, and `spreadsheets` entries install individual document skills from [anthropics/skills](https://github.com/anthropics/skills), retaining that repository's resources and license materials. Their stable FCode identities are retained. If an existing installation includes bundled office resources, bundled entries take precedence. See the upstream skill license and requirements before use.
 
-To install, run `/plugin install {plugin-name}@claude-plugins-official`
+## FCode builtins
 
-or browse for the plugin in `/plugin > Discover`
+Upstream `browser-use` and `skill-creator` catalog entries are excluded because FCode ships its own implementations with those names. Remote entries must not override bundled runtime capabilities.
 
-## Contributing
+## Maintenance
 
-### Internal Plugins
+Sync changes from the upstream directory, retaining this catalog's identity, office entries and exclusions. Review and validate source and SHA changes before publishing. Plugin renames require explicit installed-state migration.
 
-Internal plugins are developed by Anthropic team members. See `/plugins/example-plugin` for a reference implementation.
+## Licenses
 
-### External Plugins
+Preserve the original repository LICENSE and individual plugin licenses. External plugins and office skills have their own license terms; inclusion in this directory does not change them.
 
-Third-party partners can submit plugins for inclusion in the marketplace. External plugins must meet quality and security standards for approval. To submit a new plugin, use the [plugin directory submission form](https://clau.de/plugin-directory-submission).
-
-## Plugin Structure
-
-Each plugin follows a standard structure:
-
-```
-plugin-name/
-├── .claude-plugin/
-│   └── plugin.json      # Plugin metadata (required)
-├── .mcp.json            # MCP server configuration (optional)
-├── commands/            # Slash commands (optional)
-├── agents/              # Agent definitions (optional)
-├── skills/              # Skill definitions (optional)
-└── README.md            # Documentation
-```
-
-## Plugin names are immutable
-
-The `name` field in a marketplace entry is an **immutable slug**. Once a plugin has been published, its `name` must not change — users have it installed under that slug, and renaming it breaks their install with a `plugin-not-found` error.
-
-- To change how a plugin is labeled in the UI, set or update `displayName` instead.
-- If a rename is genuinely unavoidable, add an entry to the top-level `renames` map in `.claude-plugin/marketplace.json` so existing installs auto-migrate:
-
-```json
-"renames": {
-  "old-name": "new-name"
-}
-```
-
-The Claude Code plugin loader reads this map and transparently rewrites the old slug to the new one on the user's next sync.
-
-## Skill-bundle plugins
-
-When a plugin's source repository ships skills (`SKILL.md` files) without a `.claude-plugin/plugin.json` manifest, the marketplace entry can declare the skills directly using `strict: false` and an explicit `skills` array.
-
-```json
-{
-  "name": "example-bundle",
-  "description": "Brief description of the bundled skills.",
-  "author": { "name": "Author Name" },
-  "category": "development",
-  "source": {
-    "source": "git-subdir",
-    "url": "https://github.com/example-org/sdk.git",
-    "path": "packages/agent-skills",
-    "ref": "main",
-    "sha": "<commit sha>"
-  },
-  "strict": false,
-  "skills": [
-    "./skill-a",
-    "./skill-b",
-    "./skill-c"
-  ],
-  "homepage": "https://github.com/example-org/sdk"
-}
-```
-
-Each path in `skills` is relative to `source.path` and points at a directory containing a `SKILL.md`. Paths can reach deeper than a single level — for example, `["./libA/skill-1", "./libB/skill-2"]` exposes a curated subset across multiple library subdirectories. Each skill is registered as `<plugin-name>:<skill-name>` in Claude Code.
-
-For the underlying schema, see [Strict mode](https://code.claude.com/docs/en/plugin-marketplaces) in the marketplace documentation.
-
-## License
-
-Please see each linked plugin for the relevant LICENSE file.
-
-## Documentation
-
-For more information on developing Claude Code plugins, see the [official documentation](https://code.claude.com/docs/en/plugins).
+The FCode-authored `plugin-creator` entry supplies the creation workflow and a local scaffolder for trimmed installations without a bundled creator.
